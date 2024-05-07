@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Port = 3001;
+const Port = 3010;
 
 
 // mongo db connection 
