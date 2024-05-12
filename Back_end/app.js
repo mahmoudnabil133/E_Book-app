@@ -4,15 +4,15 @@ const mongoose = require('mongoose');
 const Book = require('./models/bookModel')
 const bookRouter = require('./routes/booksRoutes')
 const userRouter = require('./routes/usersRoutes')
+const searchRouter = require('./routes/search')
 
 const cors = require('cors')
 
 const app = express();
 
 app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+  origin:"http://localhost:3000",
+  credentials:true
 }));
 app.use(express.json())
 mongoose
@@ -31,4 +31,5 @@ mongoose
 
 app.use('/books', bookRouter);
 app.use('/users', userRouter);
-  
+app.use('/searchBook', searchRouter)
+
